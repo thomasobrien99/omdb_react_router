@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
+import ShortMoviePanel from './ShortMoviePanel'
 import $ from 'jquery'
 
 class SearchRoute extends Component{
@@ -24,7 +25,6 @@ class SearchRoute extends Component{
 						type ="submit" 
 						value="Search OMDB" />
 				</form>
-				<Link to='/show'>Show Route</Link>
 				{this.state.movies.map((el, key)=>{
 					return this._renderMovieRow(el, key);
 				})}
@@ -53,11 +53,7 @@ class SearchRoute extends Component{
 	}
 	_renderMovieRow(movie, key){
 		return (
-			<li key={key}>
-				<Link to={`/${movie.imdbID}`}>
-					{movie.Title}
-				</Link>
-			</li>
+			<ShortMoviePanel movie={movie} key={key} num={key+1} />
 		)
 	}
 }
