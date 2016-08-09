@@ -7,7 +7,8 @@ class SearchRoute extends Component{
 		super(props)
 		this.state = {
 			movies : [],
-			query : ''
+			query : '',
+			noResults: false
 		}
 	}
 	render(){
@@ -27,13 +28,27 @@ class SearchRoute extends Component{
 				{this.state.movies.map((el, key)=>{
 					return this._renderMovieRow(el, key);
 				})}
+				{this._renderNoResultsMessage()}
 			</div>
 		)
+	}
+	_renderNoResultsMessage(){
+		if (this.state.noResults)
+		{
+			return (
+				<h2>Your Search Returned No Results!</h2>
+			)
+		}
 	}
 	_handleSubmit(e){
 		e.preventDefault();
 		$.ajax(`http://www.omdbapi.com/?s=${this.state.query}&y=&plot=short&r=json`).then((res)=>{
-			this.setState({movies: res.Search ? res.Search : []})
+			if(res.Search){
+				this.setState({movies: res.Search, noResults:false})
+			}
+			else{
+				this.setState({movies: [], noResults:true})
+			}
 		}).catch(err=>{console.log(err)})
 	}
 	_renderMovieRow(movie, key){
