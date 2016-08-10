@@ -19,6 +19,11 @@ class ShortMoviePanel extends Component{
 					</ul>
 				</div>
 				<div className="panel-footer">
+				  <Link to={`/${this.props.movie.imdbID}`}>
+				  	<div className="btn btn-default">
+				  		More Details
+				  	</div>
+				  </Link>
 				</div>
 			</div>
 			)

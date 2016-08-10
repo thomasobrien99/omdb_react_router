@@ -14,17 +14,26 @@ class SearchRoute extends Component{
 	}
 	render(){
 		return(
-			<div>
-				<h1>Search OMDB</h1>
-				<form onSubmit={(e)=>this._handleSubmit(e)}>
-					<input 
-						type="text" 
-						placeholder="Search..."
-						onChange={(e)=>{this.setState({query: e.target.value})}}/>
-					<input 
-						type ="submit" 
-						value="Search OMDB" />
-				</form>
+			<div className="container">
+				<div className="page-header">
+					<h1>Search OMDB</h1>
+				</div>
+				<div className="search-form-box">
+					<form className="search-form" onSubmit={(e)=>this._handleSubmit(e)}>
+						<input 
+								type="text" 
+								placeholder="Search..."
+								onChange={(e)=>{this.setState({query: e.target.value})}}/>
+						<br/>
+						<br/>
+						<input 
+								type ="submit" 
+								value="Search OMDB" />
+					</form>
+				</div>
+				<br/>
+				<br/>
+				<br/>
 				{this.state.movies.map((el, key)=>{
 					return this._renderMovieRow(el, key);
 				})}
@@ -36,7 +45,9 @@ class SearchRoute extends Component{
 		if (this.state.noResults)
 		{
 			return (
-				<h2>Your Search Returned No Results!</h2>
+				<div className="page-header">
+					<h2>Your Search Returned No Results!</h2>
+				</div>
 			)
 		}
 	}
