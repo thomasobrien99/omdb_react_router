@@ -44,7 +44,7 @@ class ShowRoute extends Component{
 					 	 Search
 						</div>
 					</Link>
-					<a href = {`/${this.state.movie.tomatoURL}`}>
+					<a href = {`${this.state.movie.tomatoURL}`}>
 						<div className = 'btn btn-success'>
 							Tomato-Meter : {this.state.movie.tomatoMeter}
 						</div>
