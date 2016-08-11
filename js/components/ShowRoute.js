@@ -39,7 +39,7 @@ class ShowRoute extends Component{
 					</table>
 				</div>
 				<div className='panel-footer'>
-					<Link to='/'>Search</Link>
+					<Link to='/omdb_react_router/'>Search</Link>
 				</div>
 			</div>}
 			</div>
