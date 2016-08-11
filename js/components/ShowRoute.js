@@ -39,14 +39,16 @@ class ShowRoute extends Component{
 					</table>
 				</div>
 				<div className='panel-footer'>
-					<div className = 'btn btn-primary'>
-					  <Link to='/omdb_react_router/'>Search</Link>
-					</div>
-					<div className = 'btn btn-success'>
-						<Link to={`/${this.state.movie.tomatoURL}`}>
+					<Link to='/omdb_react_router/'>
+						<div className = 'btn btn-primary'>
+					 	 Search
+						</div>
+					</Link>
+					<a href = {`/${this.state.movie.tomatoURL}`}>
+						<div className = 'btn btn-success'>
 							Tomato-Meter : {this.state.movie.tomatoMeter}
-						</Link>
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>}
 			</div>
