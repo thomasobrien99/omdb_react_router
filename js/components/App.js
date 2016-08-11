@@ -11,8 +11,8 @@ class App extends Component {
   render(){
     return(
       <Router history={browserHistory}>
-        <Route path='/' component={SearchRoute} />
-        <Route path='/:id' component={ShowRoute} />
+        <Route path='/omdb_react_router/' component={SearchRoute} />
+        <Route path='/omdb_react_router/:id' component={ShowRoute} />
       </Router>
     )
   }
