@@ -12,7 +12,7 @@ class App extends Component {
     return(
       <Router history={browserHistory}>
         <Route path='/omdb_react_router/' component={SearchRoute} />
-        <Route path='/omdb_react_router/:id' component={ShowRoute} />
+        
       </Router>
     )
   }
