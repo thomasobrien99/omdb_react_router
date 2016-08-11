@@ -11,7 +11,7 @@ class ShowRoute extends Component{
 		}
 	}
 	componentDidMount(){
-		$.ajax(`https://www.omdbapi.com/?i=${this.props.params.id}&y=&plot=full&r=json`).then(movie=>{
+		$.ajax(`https://www.omdbapi.com/?i=${this.props.params.id}&y=&plot=full&r=json&tomatoes=true`).then(movie=>{
 			this.setState({movie, loading: false})
 		}).catch(err=>{console.log(err)})
 	}
@@ -39,7 +39,14 @@ class ShowRoute extends Component{
 					</table>
 				</div>
 				<div className='panel-footer'>
-					<Link to='/omdb_react_router/'>Search</Link>
+					<div className = 'btn btn-primary'>
+					  <Link to='/omdb_react_router/'>Search</Link>
+					</div>
+					<div className = 'btn btn-success'>
+						<Link to={`/${this.state.movie.tomatoURL}`}>
+							Tomato-Meter : {this.state.movie.tomatoMeter}
+						</Link>
+					</div>
 				</div>
 			</div>}
 			</div>
