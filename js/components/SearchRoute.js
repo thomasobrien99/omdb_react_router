@@ -53,7 +53,7 @@ class SearchRoute extends Component{
 	}
 	_handleSubmit(e){
 		e.preventDefault();
-		$.ajax(`https://www.omdbapi.com/?s=${this.state.query}&y=&plot=short&r=json`).then((res)=>{
+		$.ajax(`https://www.omdbapi.com/?s=${this.state.query}&y=&r=json`).then((res)=>{
 			if(res.Search){
 				this.setState({movies: res.Search, noResults:false})
 			}
