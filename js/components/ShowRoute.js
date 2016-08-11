@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+ 	import React, {Component} from 'react'
 import {Link} from 'react-router'
 import $ from 'jquery'
 
@@ -19,8 +19,8 @@ class ShowRoute extends Component{
 		return(
 			<div className='container'>
 			{this.state.loading ? "Loading" : 
-			<div className='col-sm-offset-3 col-sm-6 panel panel-success'>
-				<div className='panel-heading'>
+			<div className='col-sm-offset-2 col-sm-8 panel panel-success'>
+				<div className='panel-heading search-form'>
 					<h1>{this.state.movie.Title}</h1>
 				</div>
 				<div className='panel-body'>
@@ -31,15 +31,16 @@ class ShowRoute extends Component{
 									<img src={this.state.movie.Poster}/>
 								</td>
 								<td>
-									<h2>Details</h2>
+									<h2>Plot</h2>
 									<p>{this.state.movie.Plot}</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div className='panel-footer'></div>
-				<Link to='/'>Search</Link>
+				<div className='panel-footer'>
+					<Link to='/'>Search</Link>
+				</div>
 			</div>}
 			</div>
 		)
