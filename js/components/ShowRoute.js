@@ -11,7 +11,7 @@ class ShowRoute extends Component{
 		}
 	}
 	componentDidMount(){
-		$.ajax(`http://www.omdbapi.com/?i=${this.props.params.id}&y=&plot=full&r=json`).then(movie=>{
+		$.ajax(`https://www.omdbapi.com/?i=${this.props.params.id}&y=&plot=full&r=json`).then(movie=>{
 			this.setState({movie, loading: false})
 		}).catch(err=>{console.log(err)})
 	}
